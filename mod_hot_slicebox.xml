@@ -24,7 +24,8 @@
 	</files>
 
 	<languages>
-		<language tag="en-GB">en-GB.mod_hot_slicebox.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_hot_slicebox.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_hot_slicebox.sys.ini</language>
 	</languages>
 	
 	<config>
