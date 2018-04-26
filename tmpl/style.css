@@ -1,9 +1,9 @@
 /*------------------------------------------------------------------------
 # "Hot Slicebox" - Joomla module
 # Copyright (C) 2014 HotThemes. All Rights Reserved.
-# License: http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+# License: http://www.gnu.org/licenses/gpl-3.0.html GNU/GPLv3 only
 # Author: HotThemes
-# Website: http://www.hotjoomlatemplates.com
+# Website: https://www.hotjoomlatemplates.com
 -------------------------------------------------------------------------*/
 
 /* Slicebox Style */
@@ -43,7 +43,6 @@
 	z-index: 1000;
 	position: absolute;
 	background: #CBBFAE;
-	border-left: 4px solid #666;
 	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 	filter: alpha(opacity=0);	
 	opacity: 0;
@@ -60,12 +59,6 @@
 	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
 	filter: alpha(opacity=80);	
 	opacity: 1;
-}
-
-.sb-slider li.sb-current .sb-description:hover {
-	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=99)";
-	filter: alpha(opacity=99);	
-	background: rgba(185,185,185, 0.7);
 }
 
 .sb-perspective {
@@ -115,18 +108,17 @@
 .nav-arrows {
 	display: none;
 	position: absolute;
-	width: 940px;
+	width: 100%;
 	z-index: 2000;
 }
 
 .nav-arrows a {
-	display: block;
+	display: none;
 	float: left;
 	width: 50%;
 	height: 42px;
 	cursor: pointer;
 	z-index: 2000;
-	margin-top: 140px;
 }
 
 .nav-arrows a:first-child{
@@ -167,33 +159,4 @@
 		inset 0 1px 1px rgba(0,0,0,0.1), 
 		inset 0 0 0 3px #cbbfae,
 		inset 0 0 0 8px #fff;
-}
-
-.nav-options {
-	width: 70px;
-	height: 30px;
-	position: absolute;
-	right: 70px;
-	bottom: 0px;
-	display: none;
-}
-
-.nav-options span {
-	width: 30px;
-	height: 30px;
-	background: #cbbfae url(../images/options.png) no-repeat top left;
-	text-indent: -9000px;
-	cursor: pointer;
-	opacity: 0.7;
-	display: inline-block;
-	border-radius: 50%;
-}
-
-.nav-options span:first-child {
-	background-position: -30px 0px;
-	margin-right: 3px;
-}
-
-.nav-options span:hover {
-	opacity: 1;
 }

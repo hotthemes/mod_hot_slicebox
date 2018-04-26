@@ -2,9 +2,9 @@
 /*------------------------------------------------------------------------
 # "Hot Slicebox" Joomla module
 # Copyright (C) 2014 HotThemes. All Rights Reserved.
-# License: http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+# License: http://www.gnu.org/licenses/gpl-3.0.html GNU/GPLv3 only
 # Author: HotThemes
-# Website: http://www.hotjoomlatemplates.com
+# Website: https://www.hotjoomlatemplates.com
 -------------------------------------------------------------------------*/
 
 defined('_JEXEC') or die('Restricted access'); // no direct access
@@ -28,12 +28,12 @@ $doc->addScript($mosConfig_live_site.'/modules/mod_hot_slicebox/js/jquery.sliceb
 // inline style
 $doc->addStyleDeclaration( '
 
-.sb-description h3 {
+.hot-slicebox'.$uniqueId. ' .sb-description h3 {
     font-size: '.$textSize.'px;
     color: '.$textColor.';
 }
 
-.sb-description {
+.hot-slicebox'.$uniqueId. ' .sb-description {
     background: rgba('.$boxBgColor.', '.$boxTransparency.');
 }
 
@@ -46,7 +46,7 @@ $number_of_slides = -1;
 
 ?>
 
-<div>
+<div class="hot-slicebox<?php echo $uniqueId; ?>">
     <?php if($navArrows) { ?>
     <div id="nav-arrows" class="nav-arrows">
         <a href="#"><img src="<?php echo $mosConfig_live_site; ?>/modules/mod_hot_slicebox/images/arrow_right.png" alt="arrow right"/></a>
@@ -67,26 +67,27 @@ $number_of_slides = -1;
             <?php } ?>
         <?php } ?>
     </ul>
-</div>
-<?php if($navDots) { ?>
-<div id="nav-dots" class="nav-dots">
-    <span class="nav-dot-current"></span>
-    <?php for ($loop = 1; $loop <= $number_of_slides; $loop += 1) { ?>
-    <span></span>
+    <?php if($navDots) { ?>
+    <div id="nav-dots" class="nav-dots">
+        <span class="nav-dot-current"></span>
+        <?php for ($loop = 1; $loop <= $number_of_slides; $loop += 1) { ?>
+        <span></span>
+        <?php } ?>
+    </div>
     <?php } ?>
 </div>
-<?php } ?>
+
 
 <script type="text/javascript">
     jQuery(function() {
 
         var Page = (function() {
 
-            var $navArrows = jQuery( '#nav-arrows' ).hide(),
-                $navDots = jQuery( '#nav-dots' ).hide(),
+            var $navArrows = jQuery( '.hot-slicebox<?php echo $uniqueId; ?> #nav-arrows' ).hide(),
+                $navDots = jQuery( '.hot-slicebox<?php echo $uniqueId; ?> #nav-dots' ).hide(),
                 $nav = $navDots.children( 'span' ),
-                $shadow = jQuery( '#shadow' ).hide(),
-                slicebox = jQuery( '#sb-slider' ).slicebox( {
+                $shadow = jQuery( '.hot-slicebox<?php echo $uniqueId; ?> #shadow' ).hide(),
+                slicebox = jQuery( '.hot-slicebox<?php echo $uniqueId; ?> #sb-slider' ).slicebox( {
                     onReady : function() {
 
                         $navArrows.show();
@@ -164,4 +165,22 @@ $number_of_slides = -1;
         Page.init();
 
     });
+
+    <?php if($navArrows) { ?>
+    var navArrowsFunction<?php echo $uniqueId; ?> = function(){  
+        var hotSliceboxHeight = ( jQuery( ".hot-slicebox<?php echo $uniqueId; ?>" ).innerHeight() ) / 2 - 50;
+        jQuery( ".hot-slicebox<?php echo $uniqueId; ?> .nav-arrows a" ).css({
+            marginTop: hotSliceboxHeight + "px",
+            display: "block"
+        });
+    }
+
+    jQuery( document ).ready(function() {
+        setTimeout(navArrowsFunction<?php echo $uniqueId; ?>, 500); 
+    });
+
+    jQuery(window).resize(function(){
+        navArrowsFunction<?php echo $uniqueId; ?>();
+    });
+    <?php } ?>
 </script>

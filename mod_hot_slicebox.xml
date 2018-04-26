@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension
 	  type="module"
-	  version="2.5"
+	  version="3.0"
 	  client="site"
 	  method="upgrade">
 	  
@@ -11,9 +11,9 @@
 	<copyright>Copyright 2014 by HotThemes</copyright>
 	<license>GNU General Public License version 2 or later</license>
 	<authorEmail>info@hotjoomlatemplates.com</authorEmail> 
-	<authorUrl>http://www.hotjoomlatemplates.com</authorUrl> 
-	<version>3.5.1</version> 
-	<description>Hot Slicebox - Free Joomla module by HotThemes</description>
+	<authorUrl>https://www.hotjoomlatemplates.com</authorUrl> 
+	<version>3.8.7</version> 
+	<description>HOT_SLICEBOX_DESC</description>
 	
 	<files>
 		<filename module="mod_hot_slicebox">mod_hot_slicebox.php</filename>
@@ -30,24 +30,23 @@
 	<config>
 		<fields name="params">
 			<fieldset name="system" label="LABEL SYSTEM SETTINGS">
-				<field name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+				<field name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" />
+				<field name="uniqueId" type="text" default="" label="LABEL UNIQUEID" description="DESC UNIQUEID" />
+				<field name="boxBgColor" type="text" default="0,0,0" label="LABEL BOX BG COLOR" description="DESC BOX BG COLOR" />
+				<field name="boxTransparency" type="text" default="0.6" label="LABEL BOX TRANSPARENCY" description="DESC BOX TRANSPARENCY" />
+				<field name="textColor" type="color" default="#ffffff" label="LABEL TEXT COLOR" />
+				<field name="textSize" type="text" default="12" label="LABEL TEXT SIZE" description="DESC TEXT SIZE" />
 				<field name="linkNewWindow" type="list" default="0" label="LABEL LINK NEW WINDOW" description="DESC LINK NEW WINDOW">
 					<option value="1">Enable</option>
 					<option value="0">Disable</option>
 				</field>
 			</fieldset>
-			<fieldset name="style" label="LABEL STYLE">
-				<field name="boxBgColor" type="text" default="255,255,255" label="LABEL BOX BG COLOR" description="DESC BOX BG COLOR" />
-				<field name="boxTransparency" type="text" default="0.8" label="LABEL BOX TRANSPARENCY" description="DESC BOX TRANSPARENCY" />
-				<field name="textColor" type="color" default="#000000" label="LABEL TEXT COLOR" description="LABEL COLOR" />
-				<field name="textSize" type="text" default="12" label="LABEL TEXT SIZE" description="DESC TEXT SIZE" />
-			</fieldset>
 			<fieldset name="navigation" label="LABEL NAVIGATION">
-				<field name="navArrows" type="list" default="1" label="LABEL NAVIGATION ARROWS">
+				<field name="navArrows" type="list" default="1" label="LABEL NAVIGATION ARROWS" description="DESC NAVIGATION ARROWS">
 					<option value="0">Disabled</option>
 					<option value="1">Enabled</option>
 				</field>
-				<field name="navDots" type="list" default="1" label="LABEL NAVIGATION DOTS">
+				<field name="navDots" type="list" default="1" label="LABEL NAVIGATION DOTS" description="DESC NAVIGATION DOTS">
 					<option value="0">Disabled</option>
 					<option value="1">Enabled</option>
 				</field>
