@@ -27,6 +27,10 @@
 		<language tag="en-GB">language/en-GB/en-GB.mod_hot_slicebox.ini</language>
 		<language tag="en-GB">language/en-GB/en-GB.mod_hot_slicebox.sys.ini</language>
 	</languages>
+
+	<updateservers>
+		<server type="extension" priority="1" name="Hot Slicebox Update">http://update.hotjoomlatemplates.com/mod_hot_slicebox_update.xml</server>
+	</updateservers>
 	
 	<config>
 		<fields name="params">
